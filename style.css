@@ -12,19 +12,20 @@ header{
 
 .cash{
     color: #eaec5d;
-    float: right;
-    margin:3px 10px;
-    
+    display: inline-block;
+    padding-right: 5px;
 }
 
-.cash::after{
+.funds{text-align: right;margin: 3px 20px;}
+/* .cash::after{
     content: "";
     clear: both;
     display: block;
-}
+} */
 
 .wrapper{
-    height: 100%;
+    width: 80%;
+    margin:0 auto;
     background: url("../BlackJack/damask-1920x1200-62.jpg");
     max-width: 1400px;
     background-size: contain;
@@ -67,23 +68,25 @@ header{
 
 .slot img {
     border:5px solid #ff4500;
-    width:150px;
-    height:200px;
+    width:100px;
+    height:150px;
     float: left;
     margin: 10px;
+    
 }
     
 .slot [alt="deck"]{
     border:none;
+    float: none;
 }
 .card-slots::after{
     content: "";
     clear: both;
     display: block;
 }
-.options{width:80%;margin: 0 auto;}
-.options button{
-    color: yellowgreen;
+.options{width:80%;margin: 0 auto;visibility: hidden;}
+.btn{
+    color: #f4f4f4;    
     background-color: #628fc4;
     border: none;
     width: 16%;
@@ -92,7 +95,7 @@ header{
     font-style: bold;
 
 }
-.options button:active{
+.btn:active{
     
     background-color: #6290c4c0;
     border: 3px solid orange;
@@ -104,5 +107,30 @@ header{
 .players{
     color:#f4f4f4;
     margin:3px;
-    display: inline-block;
+    
 }
+#START {display: block;margin: 0 auto;}
+.btnContainer{margin: 10px;}
+header a{
+    
+    color: #f4f4f4;
+    font-size: 42px;
+    text-transform: capitalize;
+    text-decoration: none;
+    border-left: 3px solid #eaec5d;
+    border-right: 3px solid #eaec5d;
+    
+    float: right;
+    margin-right: 10px;
+    padding: 0 10px;
+
+}
+header a:hover{
+    color: #f4f4f4d2;
+}
+header a::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+

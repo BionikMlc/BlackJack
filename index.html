@@ -16,49 +16,53 @@
                 <img src="../BlackJack/blackjack-303154_960_720.png" alt="black jack logo">
             </div>
             <h1>Black <span>Jack</span></h1>
+            <a href="">Rules</a>
+            <!-- <a href=""></a> -->
            
         </header>
-        <div class="score">
-            <p>Result: <span></span></p>
-        </div>
+        <div class="funds">
+            <h2 class="cash">Placed bet &dollar; <span>0</span></h2>
+            <h2 class="cash">Balance &dollar; <span>0</span></h2>
+        </div> 
+
+        <div class="btnContainer"><button class="btn" id="START" onclick="start()">START</button></div>
        <h2 class="players">DEALER</h2>
-        <div class="card-slots">
-            
-            <div class="slot">
-            <img src="../BlackJack/Plastic-Paper-playing-cards-designing-service.jpg" alt="deck">
-            </div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot1"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot2"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot3"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot4"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot5"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot4"></div>
+       <h3 class="players Total">Total: </h3>
+       <!-- <div class="slot">
+        <img src="../BlackJack/Plastic-Paper-playing-cards-designing-service.jpg" alt="deck">
+        </div> -->
+       <div class="card-slots">
+            <div class="slot"><img class="dealer" src="../BlackJack/download.jpg" alt="card slot1"></div>
+            <div class="slot"><img class="dealer" src="../BlackJack/download.jpg" alt="card slot2"></div>
+            <div class="slot"><img class="dealer" src="../BlackJack/download.jpg" alt="card slot3"></div>
+            <div class="slot"><img class="dealer" src="../BlackJack/download.jpg" alt="card slot4"></div>
+            <div class="slot"><img class="dealer" src="../BlackJack/download.jpg" alt="card slot5"></div>
+            <div class="slot"><img class="dealer" src="../BlackJack/download.jpg" alt="card slot4"></div>
+            <div class="slot"><img class="dealer" src="../BlackJack/download.jpg" alt="card slot6"></div>
         </div>
             <hr>
-            <h2 class="players">YOU</h1>
-            <h2 class="cash">&dollar; <span>500</span></h2>
-        <div class="card-slots">
-            <div class="slot">
-            <img src="../BlackJack/download.jpg" alt="card slot0">
+            <h2 class="players">YOU</h2>
+            <h3 class="players Total">Total: </h3>
+            <div class="card-slots">
+                <div class="slot"><img class="user" src="../BlackJack/download.jpg" alt="card slot0"></div>
+                <div class="slot"><img class="user" src="../BlackJack/download.jpg" alt="card slot1"></div>
+                <div class="slot"><img class="user" src="../BlackJack/download.jpg" alt="card slot2"></div>
+                <div class="slot"><img class="user" src="../BlackJack/download.jpg" alt="card slot3"></div>
+                <div class="slot"><img class="user" src="../BlackJack/download.jpg" alt="card slot4"></div>
+                <div class="slot"><img class="user" src="../BlackJack/download.jpg" alt="card slot5"></div>
+                <div class="slot"><img class="user" src="../BlackJack/download.jpg" alt="card slot4"></div>
             </div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot1"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot2"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot3"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot4"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot5"></div>
-            <div class="slot"><img src="../BlackJack/download.jpg" alt="card slot4"></div>
-
-        </div>
         <div class="options">
-            <button>HIT</button>
-            <button>STAND</button>
-            <button>DOUBLE DOWN</button>
-            <button>SPLIT</button>
-            <button>SURRRENDER</button>
+            <button class="btn" onclick="hit()">HIT</button>
+            <button class="btn" onclick="stand()">STAND</button>
+            <button class="btn" onclick="doubleDown()">DOUBLE DOWN</button>
+            <button class="btn" onclick="split()">SPLIT</button>
+            <button class="btn" onclick="surrender()">SURRRENDER</button>
         </div>
+        
     </div>
-    <script type="text/javascript">
-    
+    <h1 id="result">player</h1>
+    <script  src="blackJack.js">
     </script>
 </body>
 </html>
