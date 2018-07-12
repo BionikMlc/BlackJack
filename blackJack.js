@@ -86,166 +86,166 @@ function reset(){
 
 function cardValueCheck(card,totalCards){
   switch(card){
-      case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/1s.jpg":
+      case "../BlackJack/ace%20of%20spades/1s.jpg":
         if(totalCards+11>21)
             return 1;
         return 11;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/2s.jpg":
+        case "../BlackJack/ace%20of%20spades/2s.jpg":
         return 2;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/3s.jpg":
+        case "../BlackJack/ace%20of%20spades/3s.jpg":
         return 3;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/4s.jpg":
+        case "../BlackJack/ace%20of%20spades/4s.jpg":
         return 4;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/5s.jpg":
+        case "../BlackJack/ace%20of%20spades/5s.jpg":
         return 5;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/6s.jpg":
+        case "../BlackJack/ace%20of%20spades/6s.jpg":
         return 6;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/7s.jpg":
+        case "../BlackJack/ace%20of%20spades/7s.jpg":
         return 7;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/8s.jpg":
+        case "../BlackJack/ace%20of%20spades/8s.jpg":
         return 8;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/9s.jpg":
+        case "../BlackJack/ace%20of%20spades/9s.jpg":
         return 9;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/10s.jpg":
+        case "../BlackJack/ace%20of%20spades/10s.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/js.jpg":
+        case "../BlackJack/ace%20of%20spades/js.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/qs.jpg":
+        case "../BlackJack/ace%20of%20spades/qs.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20spades/ks.jpg":
+        case "../BlackJack/ace%20of%20spades/ks.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/1h.jpg":
+        case "../BlackJack/ace%20of%20hearts/1h.jpg":
         if(totalCards+11>21)
             return 1;
         return 11;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/2h.jpg":
+        case "../BlackJack/ace%20of%20hearts/2h.jpg":
         return 2;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/3h.jpg":
+        case "../BlackJack/ace%20of%20hearts/3h.jpg":
         return 3;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/4h.jpg":
+        case "../BlackJack/ace%20of%20hearts/4h.jpg":
         return 4;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/5h.jpg":
+        case "../BlackJack/ace%20of%20hearts/5h.jpg":
         return 5;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/6h.jpg":
+        case "../BlackJack/ace%20of%20hearts/6h.jpg":
         return 6;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/7h.jpg":
+        case "../BlackJack/ace%20of%20hearts/7h.jpg":
         return 7;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/8h.jpg":
+        case "../BlackJack/ace%20of%20hearts/8h.jpg":
         return 8;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/9h.jpg":
+        case "../BlackJack/ace%20of%20hearts/9h.jpg":
         return 9;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/10h.jpg":
+        case "../BlackJack/ace%20of%20hearts/10h.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/jh.jpg":
+        case "../BlackJack/ace%20of%20hearts/jh.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/qh.jpg":
+        case "../BlackJack/ace%20of%20hearts/qh.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20hearts/kh.jpg":
+        case "../BlackJack/ace%20of%20hearts/kh.jpg":
         return 10;      
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/1c.jpg":
+        case "../BlackJack/ace%20of%20clubs/1c.jpg":
         if(totalCards+11>21)
             return 1;
         return 11;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/2c.jpg":
+        case "../BlackJack/ace%20of%20clubs/2c.jpg":
         return 2;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/3c.jpg":
+        case "../BlackJack/ace%20of%20clubs/3c.jpg":
         return 3;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/4c.jpg":
+        case "../BlackJack/ace%20of%20clubs/4c.jpg":
         return 4;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/5c.jpg":
+        case "../BlackJack/ace%20of%20clubs/5c.jpg":
         return 5;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/6c.jpg":
+        case "../BlackJack/ace%20of%20clubs/6c.jpg":
         return 6;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/7c.jpg":
+        case "../BlackJack/ace%20of%20clubs/7c.jpg":
         return 7;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/8c.jpg":
+        case "../BlackJack/ace%20of%20clubs/8c.jpg":
         return 8;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/9c.jpg":
+        case "../BlackJack/ace%20of%20clubs/9c.jpg":
         return 9;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/10c.jpg":
+        case "../BlackJack/ace%20of%20clubs/10c.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/jc.jpg":
+        case "../BlackJack/ace%20of%20clubs/jc.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/kc.jpg":
+        case "../BlackJack/ace%20of%20clubs/kc.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20clubs/qc.jpg":
+        case "../BlackJack/ace%20of%20clubs/qc.jpg":
         return 10;      
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/1d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/1d.jpg":
         if(totalCards+11>21)
             return 1;
         return 11;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/2d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/2d.jpg":
         return 2;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/3d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/3d.jpg":
         return 3;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/4d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/4d.jpg":
         return 4;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/5d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/5d.jpg":
         return 5;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/6d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/6d.jpg":
         return 6;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/7d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/7d.jpg":
         return 7;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/8d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/8d.jpg":
         return 8;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/9d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/9d.jpg":
         return 9;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/10d.jpg":
+        case "../BlackJack/ace%20of%20diamonds/10d.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/jd.jpg":
+        case "../BlackJack/ace%20of%20diamonds/jd.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/qd.jpg":
+        case "../BlackJack/ace%20of%20diamonds/qd.jpg":
         return 10;
         
-        case "file:///C:/Users/awsom/Desktop/BlackJack/ace%20of%20diamonds/kd.jpg":
+        case "../BlackJack/ace%20of%20diamonds/kd.jpg":
         return 10;
         default:
             console.log("no cards match");
