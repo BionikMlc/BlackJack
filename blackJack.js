@@ -61,14 +61,14 @@ function addCard(numOfcardsToAdd,isUser){
    if (isUser){
     for(var i=0; i < numOfcardsToAdd;i++){
         useCards[indexOfLastUserCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
-        totalUserCards += cardValueCheck( useCards[indexOfLastUserCard].src,totalUserCards);
+        totalUserCards += cardValueCheck( useCards[indexOfLastUserCard],totalUserCards);
         indexOfLastUserCard++;
         indexOfLastDrawnCard++;}
     }
     else
         for(var i=0; i < numOfcardsToAdd;i++){
             dealerCards[indexOfLastDealerCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
-            totalDealerCards += cardValueCheck( dealerCards[indexOfLastDealerCard].src,totalDealerCards);
+            totalDealerCards += cardValueCheck( dealerCards[indexOfLastDealerCard],totalDealerCards);
             indexOfLastDealerCard++;
             indexOfLastDrawnCard++;
         }
@@ -85,167 +85,171 @@ function reset(){
 } // resets game and other global variables 
 
 function cardValueCheck(card,totalCards){
-  switch(card){
-      case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/1s.jpg":
+    var cardSrc = card.src;
+    var indexOfCard = cardSrc.slice(-8);// make it to a seperate function.
+    indexOfCard = indexOfCard.slice(indexOfCard.indexOf("/"));
+
+  switch(indexOfCard){
+      case "/1s.jpg":
         if(totalCards+11>21)
             return 1;
         return 11;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/2s.jpg":
+        case "/2s.jpg":
         return 2;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/3s.jpg":
+        case "/3s.jpg":
         return 3;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/4s.jpg":
+        case "/4s.jpg":
         return 4;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/5s.jpg":
+        case "/5s.jpg":
         return 5;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/6s.jpg":
+        case "/6s.jpg":
         return 6;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/7s.jpg":
+        case "/7s.jpg":
         return 7;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/8s.jpg":
+        case "/8s.jpg":
         return 8;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/9s.jpg":
+        case "/9s.jpg":
         return 9;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/10s.jpg":
+        case "/10s.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/js.jpg":
+        case "/js.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/qs.jpg":
+        case "/qs.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20spades/ks.jpg":
+        case "/ks.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/1h.jpg":
+        case "/1h.jpg":
         if(totalCards+11>21)
             return 1;
         return 11;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/2h.jpg":
+        case "/2h.jpg":
         return 2;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/3h.jpg":
+        case "/3h.jpg":
         return 3;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/4h.jpg":
+        case "/4h.jpg":
         return 4;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/5h.jpg":
+        case "/5h.jpg":
         return 5;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/6h.jpg":
+        case "/6h.jpg":
         return 6;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/7h.jpg":
+        case "/7h.jpg":
         return 7;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/8h.jpg":
+        case "/8h.jpg":
         return 8;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/9h.jpg":
+        case "/9h.jpg":
         return 9;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/10h.jpg":
+        case "/10h.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/jh.jpg":
+        case "/jh.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/qh.jpg":
+        case "/qh.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20hearts/kh.jpg":
+        case "/kh.jpg":
         return 10;      
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/1c.jpg":
+        case "/1c.jpg":
         if(totalCards+11>21)
             return 1;
         return 11;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/2c.jpg":
+        case "/2c.jpg":
         return 2;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/3c.jpg":
+        case "/3c.jpg":
         return 3;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/4c.jpg":
+        case "/4c.jpg":
         return 4;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/5c.jpg":
+        case "/5c.jpg":
         return 5;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/6c.jpg":
+        case "/6c.jpg":
         return 6;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/7c.jpg":
+        case "/7c.jpg":
         return 7;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/8c.jpg":
+        case "/8c.jpg":
         return 8;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/9c.jpg":
+        case "/9c.jpg":
         return 9;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/10c.jpg":
+        case "/10c.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/jc.jpg":
+        case "/jc.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/kc.jpg":
+        case "/kc.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20clubs/qc.jpg":
+        case "/qc.jpg":
         return 10;      
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/1d.jpg":
+        case "/1d.jpg":
         if(totalCards+11>21)
             return 1;
         return 11;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/2d.jpg":
+        case "/2d.jpg":
         return 2;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/3d.jpg":
+        case "/3d.jpg":
         return 3;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/4d.jpg":
+        case "/4d.jpg":
         return 4;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/5d.jpg":
+        case "/5d.jpg":
         return 5;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/6d.jpg":
+        case "/6d.jpg":
         return 6;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/7d.jpg":
+        case "/7d.jpg":
         return 7;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/8d.jpg":
+        case "/8d.jpg":
         return 8;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/9d.jpg":
+        case "/9d.jpg":
         return 9;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/10d.jpg":
+        case "/10d.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/jd.jpg":
+        case "/jd.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/qd.jpg":
+        case "/qd.jpg":
         return 10;
         
-        case "https://bionikmlc.github.io/BlackJack/ace%20of%20diamonds/kd.jpg":
+        case "/kd.jpg":
         return 10;
         default:
             console.log("no cards match");
