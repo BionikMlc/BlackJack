@@ -74,7 +74,9 @@ header{
     margin: 10px;
     
 }
-    
+.slot [class = "dealer"]{
+    border:none;
+}
 .slot [alt="deck"]{
     border:none;
     float: none;

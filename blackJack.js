@@ -3,15 +3,19 @@ var isFirstStart = true;
 var indexOfLastUserCard=0;
 var indexOfLastDealerCard=0;
 var indexOfLastDrawnCard =0;
-var bet;
-var total = document.getElementsByClassName("Total");
-var balance;
 var totalUserCards= 0;
 var totalDealerCards = 0;
+var bet =0;////////////-
+var balance =0;
+///// DOM
+var total = document.getElementsByClassName("Total");
 var useCards = document.getElementsByClassName("user");
 var dealerCards = document.getElementsByClassName("dealer");
 var options = document.getElementsByClassName("options");
+var buttons = document.getElementsByClassName("btn");
 var startButton = document.getElementById("START");
+var enterdBet = document.getElementsByClassName("cash");
+var enterdBalance = document.getElementsByClassName("cash");
 var  playingCards = [
         "../BlackJack/ace of spades/1s.jpg","../BlackJack/ace of spades/2s.jpg","../BlackJack/ace of spades/3s.jpg",
         "../BlackJack/ace of spades/4s.jpg","../BlackJack/ace of spades/5s.jpg","../BlackJack/ace of spades/6s.jpg",
@@ -34,59 +38,50 @@ var  playingCards = [
 ///////////// end of Global
 
 ///////////// functions
-
 function start(){
     startButton.style.visibility = "hidden";
-    startButton.innerHTML = "play again";
+    startButton.innerHTML = "Play Again";
+    startButton.setAttribute("onClick","playAgain()");
     deckShuffle();
-    placeBet(); // is nan
+    // if(bet==false&&balance==false)
+         placeBet(); // is nan
     dealerMode(isFirstStart);
     userMode();
-    
 }
 function playAgain(){
-
+    reset();
+    start();
 }
 //options functions
 function placeBet(){
-    balance = parseInt(prompt("Enter balance","200"));
-     bet = parseInt(prompt("Enter your bit plz","100"));
-    var enterdBet = document.getElementsByClassName("cash");
-    var enterdBalance = document.getElementsByClassName("cash");
-    enterdBet[0].innerHTML="Placed bet &dollar; "+bet;
-    enterdBalance[1].innerHTML="Balance &dollar; "+(balance - bet);
-} // places a bit
-function addCard(numOfcardsToAdd,isUser){
 
-   if (isUser){
-    for(var i=0; i < numOfcardsToAdd;i++){
-        useCards[indexOfLastUserCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
-        totalUserCards += cardValueCheck( useCards[indexOfLastUserCard],totalUserCards);
-        indexOfLastUserCard++;
-        indexOfLastDrawnCard++;}
-    }
-    else
-        for(var i=0; i < numOfcardsToAdd;i++){
-            dealerCards[indexOfLastDealerCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
-            totalDealerCards += cardValueCheck( dealerCards[indexOfLastDealerCard],totalDealerCards);
-            indexOfLastDealerCard++;
-            indexOfLastDrawnCard++;
+    if(balance==0){//entered bet 
+        setBalance();
         }
-     
-    
+    setBet();    
+} // places a bit
 
-} 
-// double bit and place a card then stand
+function reset(){ 
+     indexOfLastUserCard=0;
+     indexOfLastDealerCard=0;
+     indexOfLastDrawnCard =0;
+     totalUserCards= 0;
+     totalDealerCards = 0;
+     isFirstStart = true;
+     //buttons[5].style.visibility="visible";
+     enterdBet[0].innerHTML="Placed bet &dollar; 0";
+     //reset slots
+     for(var i=0;i< useCards.length;i++){
+        useCards[i].setAttribute("src","../BlackJack/download.jpg");
+        dealerCards[i].setAttribute("src","../BlackJack/download.jpg");}
 
- // surrender user // half of the bet is lost
-
-function reset(){
-
-} // resets game and other global variables 
+     setBet();
+    // resets game and other global variables 
+}
 
 function cardValueCheck(card,totalCards){
     var cardSrc = card.src;
-    var indexOfCard = cardSrc.slice(-8);// make it to a seperate function.
+    var indexOfCard = cardSrc.slice(-8)
     indexOfCard = indexOfCard.slice(indexOfCard.indexOf("/"));
 
   switch(indexOfCard){
@@ -257,89 +252,140 @@ function cardValueCheck(card,totalCards){
     
 } 
 /////////////////// utility and background functions
-function hideButton(){}
+function hideSurrender(){
+    if(isFirstStart==false)
+        buttons[5].style.visibility="hidden"
+        
+}
+function addCard(numOfcardsToAdd,isUser){
 
-// function edit(editedText){}
-
+    if (isUser){
+     for(var i=0; i < numOfcardsToAdd;i++){
+         useCards[indexOfLastUserCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
+         totalUserCards += cardValueCheck( useCards[indexOfLastUserCard],totalUserCards);
+         indexOfLastUserCard++;
+         indexOfLastDrawnCard++;}
+     }
+     else
+         for(var i=0; i < numOfcardsToAdd;i++){
+             dealerCards[indexOfLastDealerCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
+             totalDealerCards += cardValueCheck( dealerCards[indexOfLastDealerCard],totalDealerCards);
+             indexOfLastDealerCard++;
+             indexOfLastDrawnCard++;
+         }
+      
+     
+ 
+ } 
 function deckShuffle(){
     var random;
     var tempContainer = 0;
     for(var i =0;i < playingCards.length;i++){
-        random = Math.floor(  Math.random()*(playingCards.length+1));
+        random = Math.floor(  Math.random()*(playingCards.length));
         tempContainer = playingCards[i];
         playingCards[i] = playingCards[random];
         playingCards[random] = tempContainer;
     }
 }
-
-function bust(){}
-
-function push(){} // bet is returend to the user if both the  dealer and user have the same sum 
-
-// function userMode(){
-//     decision();
-
-// }
+function setTotalUser(){
+        
+    total[1].innerHTML="Total: "+totalUserCards;
+    // bustCheck(totalUserCards);
+}  
+function setTotalDealer(){
+        
+    total[0].innerHTML="Total: "+totalDealerCards;
+    
+}  
 
 function dealerMode(fStart){
     if(fStart){
         hitUser(fStart);
         hitDealer();
         isFirstStart= false;
-         /// display buttons so the user can make a decision f
+        return;
     }
      else{
          while(totalDealerCards<17)
              hitDealer();
         checkWinner();
+
      }
-     
-
+     hideButtons();
 }
-
+function userMode(){
+    options[0].style.visibility = "visible";
+}
 function hitUser(fStart){
     if(fStart){
         addCard(2,true);
         setTotalUser();}
     else{
         addCard(1,true);
-        setTotalUser();}
+        setTotalUser();
+        hideSurrender();
+        // checkWinner();
+    }
 }
-
 function hitDealer(){
     
         addCard(1,false);
         setTotalDealer();
     
 }
-
-function userMode(){
-    options[0].style.visibility = "visible";
-    
-}
 //////////// options 
 function hit(){hitUser(isFirstStart);}
-
-function stand(){dealerMode(isFirstStart);} 
-
-// function doubleDown(){
-//     hitUser(isFirstStart);
-
-function setTotalUser(){
-        
-    total[1].innerHTML="Total: "+totalUserCards;
-}  
-function setTotalDealer(){
-        
-    total[0].innerHTML="Total: "+totalDealerCards;
-}  
-// }
-
-function split(){} // splits same valued cards into two hands
-
+function stand(){dealerMode(isFirstStart);}
+ function doubleDown(){
+      hitUser(isFirstStart);
+      stand();
+ }
+function split(){}
 function surrender(){
-
+    balance-= bet*.5;
+    options[0].style.visibility = "hidden";
+    enterdBalance[1].innerHTML="Balance &dollar; "+balance;
+    enterdBet[0].innerHTML="Placed bet &dollar; "+0;
+    startButton.style.visibility = "visible";
 }
+// function checkWinner(){
+//     push();
+//     if(totalDealerCards>totalUserCards&&totalDealerCards<=21){
+//     alert("the house wins")
+//     loseBet();
+// }
+// else if(totalDealerCards>21){
+//     alert("you win!");
+//     winBet();}
+// else if(totalUserCards > totalDealerCards && totalUserCards<=21){
+//     alert("u win!")
+//     winBet();}
+// else if(totalUserCards>21)
+//     alert("house wins!");
+//     loseBet();
+//     }
+
+
+
+
+
+// WINING CONDITIONS AND MONEY MANAGMENT
+
+function setBalance(){
+    balance = parseInt(prompt("Enter Balance","200"));
+    enterdBalance[1].innerHTML="Balance &dollar; "+balance;
+}
+
+function setBet(){
+    bet = parseInt(prompt("Enter your bets please","100"));
+    if(bet <= balance){
+        balance-=bet;
+        enterdBalance[1].innerHTML="Balance &dollar; "+balance;
+        enterdBet[0].innerHTML="Placed bet &dollar; "+bet;}
+//     else
+//     alert("Not enough funds");
+}
+
 function checkWinner(){if(totalDealerCards>totalUserCards&&totalDealerCards<=21){
     alert("the house wins")
 }else if(totalDealerCards==totalUserCards)
@@ -348,6 +394,48 @@ else if(totalDealerCards>21)
     alert("you win!");
 else if(totalUserCards > totalDealerCards && totalUserCards<=21)
     alert("u win!")
-else if(totalUserCards>21)
+else if(totalUserCards>21){
+    alert("house wins!");
+    hideButtons();
+    }
+}
+
+function bustCheck(totalsum){
+    if(totalsum>21)
     alert("house wins!");}
-//one card not working
+
+function push(){if(totalDealerCards==totalUserCards)
+    alert("push");
+    enterdBalance[1].innerHTML="Balance &dollar; "+balance;
+    enterdBet[0].innerHTML="Placed bet &dollar; "+0;
+        
+}  
+
+// function winBet(){
+//     balance+=bet*2;    
+//     enterdBalance[1].innerHTML="Balance &dollar; "+balance;
+//     enterdBet[0].innerHTML="Placed bet &dollar; "+0;}
+
+    // function pushBet(){
+//     balance+=bet;
+//     enterdBalance[1].innerHTML="Balance &dollar;"+balance;
+//     enterdBet[0].innerHTML="Placed bet &dollar; "+0;
+// }
+
+
+function hideButtons(){options[0].style.visibility="hidden";startButton.style.visibility="visible";}
+
+// function loseBet(){enterdBalance[1].innerHTML="Balance &dollar; "+(balance-bet);enterdBet[0].innerHTML="Placed bet &dollar; "+0;}
+
+//play again
+//double down
+//winner h1
+//split
+//style improvment
+///black jack
+//sounds
+//refactor hard
+// two bugs if the user loses b drawing a card the play again dosent show up  and the buttons do'nt hider
+//when the button is pressed and stay pressed if the user have no funds 
+//need  to fix the balance and bets
+// bust Check
