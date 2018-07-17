@@ -16,6 +16,7 @@ var buttons = document.getElementsByClassName("btn");
 var startButton = document.getElementById("START");
 var enterdBet = document.getElementsByClassName("cash");
 var enterdBalance = document.getElementsByClassName("cash");
+var result = document.getElementsByClassName("resultScreen");
 var  playingCards = [
         "../BlackJack/ace of spades/1s.jpg","../BlackJack/ace of spades/2s.jpg","../BlackJack/ace of spades/3s.jpg",
         "../BlackJack/ace of spades/4s.jpg","../BlackJack/ace of spades/5s.jpg","../BlackJack/ace of spades/6s.jpg",
@@ -430,8 +431,8 @@ function push(){if(totalDealerCards==totalUserCards)
 // function loseBet(){enterdBalance[1].innerHTML="Balance &dollar; "+(balance-bet);enterdBet[0].innerHTML="Placed bet &dollar; "+0;}
 
 
-//winner h1
-//split
+//winnerLoser h1
+//split button
 //style improvment
 ///black jack
 //sounds
@@ -440,6 +441,6 @@ function push(){if(totalDealerCards==totalUserCards)
 // cancel
 //when the button is pressed and stay pressed if the user have no funds 
 //need  to fix the balance and bets
-// bust Check
+// bust Check adjustment
 // push needs adjustment 
 //double needs adjustment
