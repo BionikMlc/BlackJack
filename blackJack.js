@@ -68,7 +68,7 @@ function reset(){
      totalUserCards= 0;
      totalDealerCards = 0;
      isFirstStart = true;
-     //buttons[5].style.visibility="visible";
+     buttons[5].style.visibility="visible";
      enterdBet[0].innerHTML="Placed bet &dollar; 0";
      //reset slots
      for(var i=0;i< useCards.length;i++){
@@ -252,6 +252,7 @@ function cardValueCheck(card,totalCards){
     
 } 
 /////////////////// utility and background functions
+function hideButtons(){options[0].style.visibility="hidden";startButton.style.visibility="visible";hideSurrender();}
 function hideSurrender(){
     if(isFirstStart==false)
         buttons[5].style.visibility="hidden"
@@ -308,9 +309,9 @@ function dealerMode(fStart){
      else{
          while(totalDealerCards<17)
              hitDealer();
-        checkWinner();
+        
 
-     }
+     }checkWinner();
      hideButtons();
 }
 function userMode(){
@@ -344,6 +345,7 @@ function split(){}
 function surrender(){
     balance-= bet*.5;
     options[0].style.visibility = "hidden";
+    hideSurrender();
     enterdBalance[1].innerHTML="Balance &dollar; "+balance;
     enterdBet[0].innerHTML="Placed bet &dollar; "+0;
     startButton.style.visibility = "visible";
@@ -398,7 +400,7 @@ else if(totalUserCards>21){
     alert("house wins!");
     hideButtons();
     }
-}
+}// devide into two functions inside one function 
 
 function bustCheck(totalsum){
     if(totalsum>21)
@@ -423,19 +425,21 @@ function push(){if(totalDealerCards==totalUserCards)
 // }
 
 
-function hideButtons(){options[0].style.visibility="hidden";startButton.style.visibility="visible";}
+
 
 // function loseBet(){enterdBalance[1].innerHTML="Balance &dollar; "+(balance-bet);enterdBet[0].innerHTML="Placed bet &dollar; "+0;}
 
-//play again
-//double down
+
 //winner h1
 //split
 //style improvment
 ///black jack
 //sounds
 //refactor hard
-// two bugs if the user loses b drawing a card the play again dosent show up  and the buttons do'nt hider
+// two bugs if the user loses by drawing a card the play again dosent show up  and the buttons do'nt hider
+// cancel
 //when the button is pressed and stay pressed if the user have no funds 
 //need  to fix the balance and bets
 // bust Check
+// push needs adjustment 
+//double needs adjustment

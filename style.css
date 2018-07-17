@@ -24,8 +24,7 @@ header{
 } */
 
 .wrapper{
-    width: 80%;
-    margin:0 auto;
+    overflow: hidden;
     background: url("../BlackJack/damask-1920x1200-62.jpg");
     max-width: 1400px;
     background-size: contain;
@@ -109,6 +108,7 @@ header{
 .players{
     color:#f4f4f4;
     margin:3px;
+    display: inline-block;
     
 }
 #START {display: block;margin: 0 auto;}
@@ -136,3 +136,15 @@ header a::after{
     clear: both;
 }
 
+.resultScreen{
+
+    position: relative;
+    left: 47%;
+    right: 47%;
+    top:40%;
+    bottom: 60%;
+    visibility: hidden;
+    
+    
+    
+}
