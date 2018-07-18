@@ -325,7 +325,9 @@ function hitUser(fStart){
     else{
         addCard(1,true);
         setTotalUser();
+        bustCheck(totalUserCards);
         hideSurrender();
+        
         // checkWinner();
     }
 }
@@ -404,8 +406,12 @@ else if(totalUserCards>21){
 }// devide into two functions inside one function 
 
 function bustCheck(totalsum){
-    if(totalsum>21)
-    alert("house wins!");}
+    if(totalsum>21){
+        alert("house wins!");
+        hideButtons();
+        
+    }
+}
 
 function push(){if(totalDealerCards==totalUserCards)
     alert("push");
@@ -437,10 +443,8 @@ function push(){if(totalDealerCards==totalUserCards)
 ///black jack
 //sounds
 //refactor hard
-// two bugs if the user loses by drawing a card the play again dosent show up  and the buttons do'nt hider
 // cancel
 //when the button is pressed and stay pressed if the user have no funds 
 //need  to fix the balance and bets
-// bust Check adjustment
-// push needs adjustment 
-//double needs adjustment
+// push needs adjustment (money managment)
+//double needs adjustment(money managment)
