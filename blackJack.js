@@ -60,24 +60,25 @@ function placeBet(){
         setBalance();
         }
     setBet();    
-} // places a bit
+} 
 
-function reset(){ 
+function reset(){ // resets everything.
      indexOfLastUserCard=0;
      indexOfLastDealerCard=0;
      indexOfLastDrawnCard =0;
      totalUserCards= 0;
      totalDealerCards = 0;
      isFirstStart = true;
+     hideGameResult();
+     result[0].setAttribute("class","resultScreen");
+     result[1].setAttribute("class","resultScreen"); 
      buttons[5].style.visibility="visible";
      enterdBet[0].innerHTML="Placed bet &dollar; 0";
-     //reset slots
      for(var i=0;i< useCards.length;i++){
         useCards[i].setAttribute("src","../BlackJack/download.jpg");
         dealerCards[i].setAttribute("src","../BlackJack/download.jpg");}
 
      setBet();
-    // resets game and other global variables 
 }
 
 function cardValueCheck(card,totalCards){
@@ -353,26 +354,6 @@ function surrender(){
     enterdBet[0].innerHTML="Placed bet &dollar; "+0;
     startButton.style.visibility = "visible";
 }
-// function checkWinner(){
-//     push();
-//     if(totalDealerCards>totalUserCards&&totalDealerCards<=21){
-//     alert("the house wins")
-//     loseBet();
-// }
-// else if(totalDealerCards>21){
-//     alert("you win!");
-//     winBet();}
-// else if(totalUserCards > totalDealerCards && totalUserCards<=21){
-//     alert("u win!")
-//     winBet();}
-// else if(totalUserCards>21)
-//     alert("house wins!");
-//     loseBet();
-//     }
-
-
-
-
 
 // WINING CONDITIONS AND MONEY MANAGMENT
 
@@ -392,33 +373,104 @@ function setBet(){
 }
 
 function checkWinner(){if(totalDealerCards>totalUserCards&&totalDealerCards<=21){
-    alert("the house wins")
+    GameResult(1);
 }else if(totalDealerCards==totalUserCards)
-    alert("push")
+    push();
 else if(totalDealerCards>21)
-    alert("you win!");
+    GameResult(0);
 else if(totalUserCards > totalDealerCards && totalUserCards<=21)
-    alert("u win!")
+    GameResult(0);
 else if(totalUserCards>21){
-    alert("house wins!");
+    GameResult(1);
     hideButtons();
     }
 }// devide into two functions inside one function 
 
 function bustCheck(totalsum){
     if(totalsum>21){
-        alert("house wins!");
+        GameResult(1);
         hideButtons();
         
     }
 }
 
-function push(){if(totalDealerCards==totalUserCards)
-    alert("push");
-    enterdBalance[1].innerHTML="Balance &dollar; "+balance;
-    enterdBet[0].innerHTML="Placed bet &dollar; "+0;
-        
+function push(){
+    
+    // enterdBalance[1].innerHTML="Balance &dollar; "+balance;
+    // enterdBet[0].innerHTML="Placed bet &dollar; "+0;
+    result[0].style.display ="inline-block";
+    result[1].style.display ="inline-block";
+    result[0].innerHTML = "push";
+    result[1].innerHTML = "push";
+    result[0].setAttribute("class","resultScreen push");
+    result[1].setAttribute("class","resultScreen push");   
 }  
+function GameResult(winner){
+        result[0].style.display ="inline-block";
+        result[1].style.display ="inline-block";
+        if(winner){
+            
+            result[0].innerHTML = "Win";
+            result[0].setAttribute("class","resultScreen win");
+            result[1].innerHTML = "lose";
+        } else{
+            result[1].innerHTML = "Win";
+            result[1].setAttribute("class","resultScreen win");
+            result[0].innerHTML = "lose";
+        }
+
+
+}
+
+
+
+function hideGameResult(){
+    result[0].style.display ="none";
+    result[1].style.display ="none";
+}
+
+
+
+
+//////task List////////////////////////////////////////////////////////////
+//winnerLoser h1                                                         //
+//split button                                                          //
+//style improvment                                                      //
+///black jack                                                           //
+//sounds                                                               //
+//refactor hard                                                       //
+// cancel                                                             //
+//when the button is pressed and stay pressed if the user have no funds //  
+//need  to fix the balance and bets                                     //
+// push needs adjustment (money managment)                              //
+//double needs adjustment(money managment)                              //
+//////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+//code chunks scrap
+
+// function checkWinner(){
+//     push();
+//     if(totalDealerCards>totalUserCards&&totalDealerCards<=21){
+//     alert("the house wins")
+//     loseBet();
+// }
+// else if(totalDealerCards>21){
+//     alert("you win!");
+//     winBet();}
+// else if(totalUserCards > totalDealerCards && totalUserCards<=21){
+//     alert("u win!")
+//     winBet();}
+// else if(totalUserCards>21)
+//     alert("house wins!");
+//     loseBet();
+//     }
+
+// function loseBet(){enterdBalance[1].innerHTML="Balance &dollar; "+(balance-bet);enterdBet[0].innerHTML="Placed bet &dollar; "+0;}
+
 
 // function winBet(){
 //     balance+=bet*2;    
@@ -430,21 +482,3 @@ function push(){if(totalDealerCards==totalUserCards)
 //     enterdBalance[1].innerHTML="Balance &dollar;"+balance;
 //     enterdBet[0].innerHTML="Placed bet &dollar; "+0;
 // }
-
-
-
-
-// function loseBet(){enterdBalance[1].innerHTML="Balance &dollar; "+(balance-bet);enterdBet[0].innerHTML="Placed bet &dollar; "+0;}
-
-
-//winnerLoser h1
-//split button
-//style improvment
-///black jack
-//sounds
-//refactor hard
-// cancel
-//when the button is pressed and stay pressed if the user have no funds 
-//need  to fix the balance and bets
-// push needs adjustment (money managment)
-//double needs adjustment(money managment)

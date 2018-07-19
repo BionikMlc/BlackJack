@@ -143,8 +143,20 @@ header a::after{
     right: 47%;
     top:40%;
     bottom: 60%;
-    visibility: hidden;
+    font-size: 32px;
+    text-transform: capitalize;
+    color: #ff0000bb;
+    display: none;
     
     
     
 }
+
+.win{
+    color: rgb(8, 151, 8);
+}
+
+.push{
+    color: #eaec5d;
+}
+
