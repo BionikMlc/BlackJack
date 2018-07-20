@@ -45,7 +45,7 @@ function start(){
     startButton.setAttribute("onClick","playAgain()");
     deckShuffle();
     // if(bet==false&&balance==false)
-         placeBet(); // is nan
+        //  placeBet(); // is nan
     dealerMode(isFirstStart);
     userMode();
 }
@@ -70,15 +70,18 @@ function reset(){ // resets everything.
      totalDealerCards = 0;
      isFirstStart = true;
      hideGameResult();
+ 
      result[0].setAttribute("class","resultScreen");
      result[1].setAttribute("class","resultScreen"); 
      buttons[5].style.visibility="visible";
      enterdBet[0].innerHTML="Placed bet &dollar; 0";
      for(var i=0;i< useCards.length;i++){
         useCards[i].setAttribute("src","../BlackJack/download.jpg");
-        dealerCards[i].setAttribute("src","../BlackJack/download.jpg");}
+        dealerCards[i].setAttribute("src","../BlackJack/download.jpg");
+        dealerCards[i].style.opacity="0";
+        useCards[i].style.opacity ="0";}
 
-     setBet();
+    //  setBet();
 }
 
 function cardValueCheck(card,totalCards){
@@ -265,6 +268,7 @@ function addCard(numOfcardsToAdd,isUser){
     if (isUser){
      for(var i=0; i < numOfcardsToAdd;i++){
          useCards[indexOfLastUserCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
+         useCards[indexOfLastUserCard].style.opacity ="1";
          totalUserCards += cardValueCheck( useCards[indexOfLastUserCard],totalUserCards);
          indexOfLastUserCard++;
          indexOfLastDrawnCard++;}
@@ -272,6 +276,7 @@ function addCard(numOfcardsToAdd,isUser){
      else
          for(var i=0; i < numOfcardsToAdd;i++){
              dealerCards[indexOfLastDealerCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
+             dealerCards[indexOfLastDealerCard].style.opacity="1";
              totalDealerCards += cardValueCheck( dealerCards[indexOfLastDealerCard],totalDealerCards);
              indexOfLastDealerCard++;
              indexOfLastDrawnCard++;
@@ -429,11 +434,14 @@ function hideGameResult(){
     result[1].style.display ="none";
 }
 
-
+function addCardSlot(){
+    var slots = getElementsByClassName("slots");
+    
+}
 
 
 //////task List////////////////////////////////////////////////////////////
-//winnerLoser h1                                                         //
+////
 //split button                                                          //
 //style improvment                                                      //
 ///black jack                                                           //
