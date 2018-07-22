@@ -264,12 +264,13 @@ function hideSurrender(){
         
 }
 function addCard(numOfcardsToAdd,isUser){
-
+    placeSnd = new Audio("../BlackJack - Copy/snd/cardPlace1.wav");
     if (isUser){
      for(var i=0; i < numOfcardsToAdd;i++){
          useCards[indexOfLastUserCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
          useCards[indexOfLastUserCard].style.opacity ="1";
          totalUserCards += cardValueCheck( useCards[indexOfLastUserCard],totalUserCards);
+         placeSnd.play();
          indexOfLastUserCard++;
          indexOfLastDrawnCard++;}
      }
@@ -278,6 +279,7 @@ function addCard(numOfcardsToAdd,isUser){
              dealerCards[indexOfLastDealerCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
              dealerCards[indexOfLastDealerCard].style.opacity="1";
              totalDealerCards += cardValueCheck( dealerCards[indexOfLastDealerCard],totalDealerCards);
+             placeSnd.play();
              indexOfLastDealerCard++;
              indexOfLastDrawnCard++;
          }
@@ -286,6 +288,8 @@ function addCard(numOfcardsToAdd,isUser){
  
  } 
 function deckShuffle(){
+    var sound = new Audio("../BlackJack - Copy/snd/cardfan1.wav");
+    sound.play();
     var random;
     var tempContainer = 0;
     for(var i =0;i < playingCards.length;i++){
@@ -298,7 +302,6 @@ function deckShuffle(){
 function setTotalUser(){
         
     total[1].innerHTML="Total: "+totalUserCards;
-    // bustCheck(totalUserCards);
 }  
 function setTotalDealer(){
         

@@ -50,9 +50,9 @@ header{
     display:inline-block;
 }
 .jack-logo img{
-    width: 100px;
-    height: 100px;
-    padding: 10px;
+    width: 80px;
+    height: 80px;
+    padding: 3px 0px 0px 10px; 
     
 }
 
@@ -73,7 +73,7 @@ header{
     /* border:5px solid #ff4500; */
     width:100px;
     height:150px;
-    margin: 10px;
+    margin-right: 3px;
     opacity: 0;
     
 }
@@ -92,7 +92,7 @@ header{
     border: none;
     width: 16%;
     height: 50px;
-    margin-top: 20px;
+    margin-top: 5px;
     font-style: bold;
 
 }
