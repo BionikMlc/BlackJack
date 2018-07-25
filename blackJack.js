@@ -288,7 +288,7 @@ function addCard(numOfcardsToAdd,isUser){
  
  } 
 function deckShuffle(){
-    var sound = new Audio("../BlackJack - Copy/snd/cardfan1.wav");
+    var sound = new Audio("../BlackJack - Copy/snd/cardFan1.wav");
     sound.play();
     var random;
     var tempContainer = 0;
