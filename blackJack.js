@@ -264,7 +264,7 @@ function hideSurrender(){
         
 }
 function addCard(numOfcardsToAdd,isUser){
-    placeSnd = new Audio("../BlackJack - Copy/media/cardPlace.wav");
+    placeSnd = new Audio("../BlackJack%20-%20Copy/media/cardPlace.wav");
     if (isUser){
      for(var i=0; i < numOfcardsToAdd;i++){
          useCards[indexOfLastUserCard].setAttribute("src",playingCards[indexOfLastDrawnCard]);
@@ -288,7 +288,7 @@ function addCard(numOfcardsToAdd,isUser){
  
  } 
 function deckShuffle(){
-    var sound = new Audio("../BlackJack - Copy/media/cardFan.wav");
+    var sound = new Audio("../BlackJack%20-%20Copy/media/cardFan.wav");
     sound.play();
     var random;
     var tempContainer = 0;
