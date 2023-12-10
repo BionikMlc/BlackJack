@@ -7,9 +7,9 @@
 header{
     background-color: #008000;
 }
-/* body{
-    /* background: url("../BlackJack/background.jpg") center center; 
-} */
+body {
+    background: #2f4f4f;
+}
 
 .cash{
     color: #eaec5d;
@@ -29,6 +29,7 @@ header{
     background: url("../BlackJack/damask-1920x1200-62.jpg");
     max-width: 1400px;
     background-size: contain;
+    margin: 0 auto;
 
 }
 
